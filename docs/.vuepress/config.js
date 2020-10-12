@@ -47,11 +47,11 @@ module.exports = {
       //     }
       //   ]
       // },
-      {
-            "text": "GitHub",
-            "link": "https://github.com/u4250",
-            "icon": "reco-github"
-      }
+      // {
+      //       "text": "GitHub",
+      //       "link": "https://github.com/u4250",
+      //       "icon": "reco-github"
+      // }
     ],
     subSidebar: 'auto',
     // "sidebar": {
