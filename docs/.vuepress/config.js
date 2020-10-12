@@ -2,6 +2,7 @@ module.exports = {
   "title": "u4250",
   "description": "奔走在自己的星河之中",
   "dest": "public",
+  base:"/blog/",
   locales: {
     '/': {
       lang: 'zh-CN'
@@ -89,6 +90,8 @@ module.exports = {
     "logo": "/logo.png",
     "search": true,
     "searchMaxSuggestions": 10,
+    docsDir: "docs",
+    repo:"https://github.com/u4250/blog",
     editLinks: true,
     editLinkText: "在 GitHub 上编辑此页",
     lastUpdated: "Last Updated",
