@@ -110,3 +110,48 @@ text没啥用
 	</body>
 </html>
 ```
+
+### v-bind动态绑定class
+
+**动态更新**HTML元素上的属性,绑定class有两种方式：对象语法和数组语法
+
+#### 对象语法：
+
+- 可以绑定多个类
+
+  ```html
+  <div id="app">
+      <div :class="{'active':isActive}">我真的是黑色的！</div>
+  </div>
+  ```
+
+  ```js
+  var app=new Vue({
+      el:'.app1',
+      data:{
+          isActive:true
+      }
+  });
+  ```
+
+- 可以和普通class共存
+
+```html
+<div id="app">
+    <div class="title" :class="{'active':isActive}">我真的是黑色的！</div>
+</div>
+```
+
+- 如果过于复杂可以放在methods，computed中
+
+```html
+<div :class="get()">我真的是黑色的！</div>
+```
+
+```js
+					get:function() {
+						return {'active':!this.isActive}
+						
+					}
+```
+
