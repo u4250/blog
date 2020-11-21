@@ -155,3 +155,42 @@ text没啥用
 					}
 ```
 
+#### 数组语法
+
+。。。。。
+
+### v-on事件绑定
+
+给元素进行**事件**绑定，需要通过v-on:指令实现.
+
+:::tip
+
+> 鼠标事件：onclick ondblclick onmouseenter onmouseleave onmouseover onmousedown等等
+
+> 键盘事件：onkeyup onkeydown onkeypress 等等
+
+:::
+
+#### 用法
+
+```html
+<p v-on:click="事件处理函数名" ></p>
+ 
+<!-- 简写形式(v-on: 指令可以简写成 @) -->
+ 
+<p @click="事件处理函数名" ></p>   
+```
+
+#### 事件处理函数传参
+
+当通过methods定义方法供@click调用时，**需要注意参数问题**。
+
+- 当方法不需要额外的参数时，那么方法后的()可以不加。
+
+  ::: danger
+  但如果该方法有一个参数，此时会将原生事件event传入！！！
+  :::
+
+- 需要传入参数且同时需要传入event时，可以通过`$event`传入事件
+
+#### 修饰符
