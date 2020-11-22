@@ -165,9 +165,9 @@ text没啥用
 
 :::tip
 
-> 鼠标事件：onclick ondblclick onmouseenter onmouseleave onmouseover onmousedown等等
+鼠标事件：onclick ondblclick onmouseenter onmouseleave onmouseover onmousedown等等
 
-> 键盘事件：onkeyup onkeydown onkeypress 等等
+键盘事件：onkeyup onkeydown onkeypress 等等
 
 :::
 
@@ -194,3 +194,73 @@ text没啥用
 - 需要传入参数且同时需要传入event时，可以通过`$event`传入事件
 
 #### 修饰符
+
+### v-if,v-else,v-else-if的使用
+
+```html
+			<h2 v-if="message=='hellovue'">ddd</h2>
+			<h2 v-else-if="11">11</h2>
+			<h2 v-else>??</h2>
+```
+
+`当逻辑复杂时不建议使用v-else-if`
+
+小案例
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<span v-if="isUser">
+				<label for="username">手机号</label>
+				<input type="text" id="username">
+                <!-- <input type="text" id="username" key="1"> -->
+			</span>
+			<span v-else>
+				<label for="email">邮箱</label>
+				<input type="text" id="email">
+			</span>
+			<button @click="isUser=!isUser">切换</button>
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:"#app",
+				data:{
+					isUser:true
+				}
+			})
+
+		</script>
+	</body>
+</html>
+```
+
+> 此时在点击切换时，输入框里的东西会保留，vue在进行DOM渲染时，出于性能考虑会复用已经存在的元素，解决方法：加input标签里添加 **key**，且不相同。
+
+### v-show
+
+与v-if类似，控制是否显示。
+
+:::tip
+
+当条件为false时
+
+v-if:   该元素不会存在DOM中
+
+
+
+v-show：会给元素添加一个行内样式**display：none**
+
+**如何选择？** 根据切换是否显示的次数来选择，如果需要多次切换时选择 **v-show**
+
+:::
+
+### v-for遍历数组
+
+
+
