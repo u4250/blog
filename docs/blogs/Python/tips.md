@@ -12,7 +12,18 @@ categories:
 ```python
 # 对dataform做聚合分析画多组条形图
 df.groupby('岗位名称')['信息水平'].value_counts().unstack().plot(kind = 'bar',width=0.8,rot=0)
+#pandas列替换
+df['reviews_from_users']=df['reviews_from_users'].mask(df['votes']<500,0)
+#遍历pandas当中dataframe的元素
+for index, row in df.iterrows():
+    print(index,row[0],row[1],)
 ```
+
+![image-20210603222310070](https://gitee.com/u4250/Pic/raw/master/image/image-20210603222310070.png)
+
+
+
+
 
 ```python
 #省市对应字典
